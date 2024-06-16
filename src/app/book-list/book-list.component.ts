@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Book } from './Book';
+import { Book } from '../../assets/interfaces/Book';
 
 @Component({
 	selector: 'app-book-list',
@@ -16,6 +16,7 @@ export class BookListComponent {
 			precio: 1000,
 			stock: 23,
 			imagen: "assets/img/harry_potter_y_la_piedra_filosofal.jpg",
+			cantidad:0,
 		},
 		{
 			id: 2,
@@ -25,6 +26,7 @@ export class BookListComponent {
 			porcentajeDescuento: 10,
 			stock: 132,
 			imagen: "assets/img/principito.jpg",
+			cantidad:0,
 		},
 		{
 			id: 3,
@@ -34,6 +36,7 @@ export class BookListComponent {
 			precio: 2300,
 			stock: 12,
 			imagen: "assets/img/montecristo.jpg",
+			cantidad:0,
 		},
 		{
 			id: 4,
@@ -43,6 +46,21 @@ export class BookListComponent {
 			porcentajeDescuento: 0,
 			stock: 0,
 			imagen: "assets/img/quijote.jpg",
+			cantidad:0,
 		},
-	]
+	];
+
+	updateCantidad(book: Book, cantidad: number) {
+		this.books.forEach(bookInBooks => {
+			if ( 
+				(bookInBooks.id == book.id) &&
+				(
+					(bookInBooks.stock > bookInBooks.cantidad && cantidad > 0) ||
+					(bookInBooks.stock >= bookInBooks.cantidad && cantidad < 0)
+				)
+			) {
+				bookInBooks.cantidad +=cantidad;
+			}
+		});
+	}
 }

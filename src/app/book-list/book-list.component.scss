@@ -2,6 +2,11 @@
     max-height: 100px ;
 }
 
+th {
+    white-space: nowrap;
+    text-align: center;
+}
+
 td, th {
     text-align: left;
     vertical-align: middle;
