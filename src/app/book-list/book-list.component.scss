@@ -1,0 +1,32 @@
+.imagen-col {
+    max-height: 100px ;
+}
+
+td, th {
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px 40px 5px 40px;
+}
+
+table {
+    margin: 20px;
+}
+
+.discount{
+    border: 3px solid green;
+    font-weight: bold;
+    font-size:20px;
+}
+
+@media only screen and (max-width: 800px),
+screen and (max-height: 600px) {
+    .imagen-col {
+        max-height: 50px ;
+    }
+
+    td, th {
+        text-align: left;
+        vertical-align: middle;
+        padding: 5px 10px 5px 10px;
+    }
+}

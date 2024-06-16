@@ -1,0 +1,29 @@
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books" [ngClass]='{discount: book.porcentajeDescuento > 0}'>
+            <th scope="row">{{book.id}}</th>
+            <td>{{book.titulo}}</td>
+            <td>{{book.autor}}</td>
+            <td>{{((100-book.porcentajeDescuento) * book.precio / 100) | currency}}</td>
+            <td>
+                <ng-template [ngIf]="book.stock > 0" [ngIfElse]="sinStock">
+                    <span class="badge text-bg-success">Hay stock</span>
+                </ng-template>
+                <ng-template #sinStock>
+                    <span class="badge text-bg-warning">Sin stock</span>
+                </ng-template>           
+            </td>
+            <td><img class="imagen-col" [src]="book.imagen" [alt]="book.titulo" /></td>
+        </tr>   
+    </tbody>
+</table>

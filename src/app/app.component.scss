@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body,
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+nav {
+    min-height: 50px;
+    height: 50px;
+    width:100%;
+    background-color: #333;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+.logo{
+    max-height: 50px;
+    padding-right: 40px;
+}
+
+nav ul img {
+    width: 5%;
+    height: 100%;
+    cursor: pointer;
+    display: none;
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 0px;
+    padding-right: 40px;
+}
+
+.menu {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    padding: 0px 40px;
+    font-weight: bold;
+}
+
+.menu:hover {
+    background-color: #d5f1c2;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    font-family: 'Courier New';
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    min-width: 420px;
+    padding-left: 1rem;
+    bottom: 0;
+    position: fixed;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+.contenido {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 100%;
+    background-color: #dfdede;
+    padding: 2% 10% 2% 8%;
+    margin-bottom:70px;
+    margin-top:50px;
+    bottom: 0;
+    min-height: 100%;
+}
+
+.checkbtn {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media only screen and (max-width: 800px),
+screen and (max-height: 600px) {
+    nav {
+        position: fixed;
+        width: 100%;
+        min-height: 70px;
+        height: 70px;
+        top:0;
+    }
+
+    .navegacion {
+        margin-top:70px;
+        padding-left: 0px;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        width: 50%;
+        height: 40%;
+        left: -100%;
+        //top: -100%;
+        transition: all 0.9s;
+    }
+
+    #check:checked~.navegacion {
+        left: 0;
+        //top: 0; 
+        background-color: #333;
+    }
+
+    .checkbtn {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        float: left;
+        line-height: 80px;
+        margin-left: 40px;
+        cursor: pointer;
+    }
+    
+    .contenido {
+        margin-top:70px;
+        padding-right: 14%;
+        padding-bottom: 10%;
+        bottom: 0;
+        min-width: 140%;
+        width: 140%;
+    }
+
+    .menu {
+        margin-left: 0px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    nav ul a {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        width: 100%;
+    }
+}
