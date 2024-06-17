@@ -9,12 +9,18 @@
     font-weight: bold;
 }
 
+.border-radius-left {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.border-radius-right {
+    border-radius: 0px 10px 10px 0px;
+}
+
 .quantity {
-    margin: 0px 4px 0px 4px;
-    border: 2px solid #11bfd6;
+    //  border: 2px solid #11bfd6;
     background-color: #c2fafc;
     color: gray;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     text-align: center;

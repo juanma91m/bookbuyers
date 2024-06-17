@@ -1,10 +1,10 @@
 <div class="container">
     @if (book.stock > 0) {
-        <button [ngClass]='{noVisible: book.cantidad <= 0}' type="button" class="btn btn-danger" (click)="clickRemove()">
+        <button [ngClass]='{noVisible: book.cantidad <= 0}' type="button" class="btn btn-danger border-radius-left" (click)="clickRemove()">
             -
         </button>
         <span class="quantity">{{book.cantidad}}</span>
-        <button [ngClass]='{noVisible: book.stock <= book.cantidad}' type="button" class="btn btn-success" (click)="clickAdd()">
+        <button [ngClass]='{noVisible: book.stock <= book.cantidad}' type="button" class="btn btn-success border-radius-right" (click)="clickAdd()">
             +
         </button>
     }
