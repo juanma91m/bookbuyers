@@ -4,9 +4,12 @@
 }
 
 [type="button"] {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .border-radius-left {
@@ -25,8 +28,8 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     font-weight: bold;
     font-size: 15px;
 }

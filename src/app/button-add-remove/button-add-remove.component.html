@@ -1,0 +1,16 @@
+<div class="container">
+    @if (book.stock > 0) {
+        <button 
+            [ngClass]='{noVisible: cart.findIndexBookById(book.id) == -1}'
+            type="button"
+            class="btn btn-danger border-radius-left"
+            (click)="clickRemove()"
+        >
+            -
+        </button>
+        <span class="quantity">{{cart.lineCart[cart.findIndexBookById(book.id)].cantidad || 0 }}</span>
+        <button [ngClass]='{noVisible: book.stock <= cart.lineCart[cart.findIndexBookById(book.id)].cantidad}' type="button" class="btn btn-success border-radius-right" (click)="clickAdd()">
+            +
+        </button>
+    }
+</div>

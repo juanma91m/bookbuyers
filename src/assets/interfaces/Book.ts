@@ -6,5 +6,4 @@ export interface Book {
     porcentajeDescuento: number;
     stock: number;
     imagen: string;
-    cantidad: number;
 }

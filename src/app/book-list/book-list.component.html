@@ -23,10 +23,10 @@
                     }
                 </td>
                 <td><img class="imagen-col" [src]="book.imagen" [alt]="book.titulo" /></td>
-				<td><app-book-button-add-remove 
+				<td><app-button-add-remove 
+                    [cart]="cart"
                     [book]="book"
-                    (cantidadChange)="updateCantidad(book, $event.cantidad)"
-                ></app-book-button-add-remove></td>
+                ></app-button-add-remove></td>
             </tr>
         } @empty {
 			<tr>
