@@ -9,7 +9,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		@for (lineCartItem of cartService.cart.linesCart; track lineCartItem.book.id) {
+		@for (lineCartItem of linesCart$ | async; track lineCartItem.book.id) {
 			<tr>
 				<td>{{lineCartItem.book.titulo}}</td>
 				<td>{{lineCartItem.book.precio | currency}}</td>
@@ -22,7 +22,8 @@
 				<td colspan="6">El carrito está vacío</td>
 			</tr>
 		}
-		@if (cartService.cart.linesCart.length > 0) {
+		
+		@if (!cartService.cart.carritoVacio()) {
 			<tr>
 				<td></td>
 				<td></td>

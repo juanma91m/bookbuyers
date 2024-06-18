@@ -1,21 +1,21 @@
 
 <nav>
-	<input type="checkbox" id="check" />
+	<input type="checkbox" id="check" #menuToggle/>
 	<label for="check" class="checkbtn">
 		<i class="fas fa-bars"></i>
 	</label>
 	<ul class="navegacion">
-		<a [routerLink]="['/home']">
+		<a [routerLink]="['/home']" (click)="closeMenu()">
 			<li class="menu"><i class="fas fa-home"></i><span class="textMenu">&nbsp;&nbsp;Inicio</span></li>
 		</a>
-		<a [routerLink]="['/books']">
+		<a [routerLink]="['/books']" (click)="closeMenu()">
 			<li class="menu"><i class="fas fa-book"></i><span class="textMenu">&nbsp;&nbsp;Libros</span></li>
 		</a>
-		<a [routerLink]="['/cart']">
+		<a [routerLink]="['/cart']" (click)="closeMenu()">
 			<li class="menu">
 				<i class="fas fa-shopping-cart"> </i><span class="textMenu">&nbsp;&nbsp;Carrito</span></li>
 		</a>
-		<a [routerLink]="['/contact']">
+		<a [routerLink]="['/contact']" (click)="closeMenu()">
 			<li class="menu"><i class="fas fa-mobile-alt"></i><span class="textMenu">&nbsp;&nbsp;Contactate</span></li>
 		</a>
 	</ul>

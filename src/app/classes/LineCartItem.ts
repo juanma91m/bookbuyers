@@ -13,12 +13,7 @@ export class BookCart {
 	}
 
 	updateCantidad(cantToAdd: number): void {
-		if ( 
-			this.book.stock > this.cantidad && cantToAdd > 0 ||
-			this.book.stock >= this.cantidad && cantToAdd < 0
-		) {
-			this.cantidad += cantToAdd;
-		}
+		this.cantidad += cantToAdd;
 	}
 
 	getTotalPrice(): number {
