@@ -1,15 +1,15 @@
 <div class="container">
-    @if (book.stock > 0) {
+    @if (max > 0) {
         <button 
-            [ngClass]='{noVisible: cart.findIndexBookById(book.id) == -1}'
+            [ngClass]='{noVisible: quantity == 0}'
             type="button"
             class="btn btn-danger border-radius-left"
             (click)="clickRemove()"
         >
             -
         </button>
-        <span class="quantity">{{cart.lineCart[cart.findIndexBookById(book.id)].cantidad || 0 }}</span>
-        <button [ngClass]='{noVisible: book.stock <= cart.lineCart[cart.findIndexBookById(book.id)].cantidad}' type="button" class="btn btn-success border-radius-right" (click)="clickAdd()">
+        <span class="quantity">{{quantity}}</span>
+        <button [ngClass]='{noVisible: max <= quantity}' type="button" class="btn btn-success border-radius-right" (click)="clickAdd()">
             +
         </button>
     }

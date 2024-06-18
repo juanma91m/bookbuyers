@@ -47,9 +47,11 @@ export class BookListComponent {
 		},
 	];
 
-	cantidades: number[] = [0, 0, 0, 0];
-
 	cart: Cart = new Cart(
 		1
 	);
+
+	updateQuantity(quantity: number, book: Book): void {
+		this.cart.updateCantidad(book, quantity);
+	}
 }

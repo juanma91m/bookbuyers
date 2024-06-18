@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (book of books; track book.titulo) {
+        @for (book of books; track book.id) {
             <tr [ngClass]='{discount: book.porcentajeDescuento > 0}'>
                 <td>{{book.titulo}}</td>
                 <td>{{book.autor}}</td>
@@ -23,10 +23,14 @@
                     }
                 </td>
                 <td><img class="imagen-col" [src]="book.imagen" [alt]="book.titulo" /></td>
-				<td><app-button-add-remove 
-                    [cart]="cart"
-                    [book]="book"
-                ></app-button-add-remove></td>
+				<td>
+                    <app-button-add-remove 
+                    [quantity]="cart.getCantidad(book.id)"
+                    [max]="book.stock"
+                    (quantityChange)="updateQuantity($event, book)"
+                    >
+                    </app-button-add-remove>
+                </td>
             </tr>
         } @empty {
 			<tr>

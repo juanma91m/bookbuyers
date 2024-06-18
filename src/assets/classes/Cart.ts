@@ -12,10 +12,13 @@ export class Cart {
         this.lineCart = [];
     }
 
-    updateCantidad(id: number, cantToAdd: number): void {
-        let index = this.findIndexBookById(id);
-  
-        if (index == -1) {
+    updateCantidad(book: Book, cantToAdd: number): void {
+        let index = this.findIndexBookById(book.id);
+
+        if (index == -1 && cantToAdd > 0)  {
+            this.lineCart.push(new BookCart(book, 1));
+        } else if (index != -1 && this.lineCart[index].cantidad == 1 && cantToAdd < 0) {
+            this.lineCart.splice(index, 1);
             return;
         } else {
             let bookCart = this.lineCart[index];
@@ -28,6 +31,14 @@ export class Cart {
                 bookCart.cantidad += cantToAdd;
             }
         }
+    }
+
+    getCantidad(idBook: number): number {
+        let index = this.findIndexBookById(idBook);
+        if (index == -1) 
+            return 0;
+        else
+            return this.lineCart[index].cantidad;
     }
 
     findIndexBookById(id: number): number {
