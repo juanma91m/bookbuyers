@@ -10,12 +10,12 @@ export class ButtonAddRemoveComponent {
 	@Input() max: number = 0;
 	@Output() quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
-    clickRemove(): void {
-        if (this.quantity > 0) {
-            this.quantity--;
-            this.quantityChange.emit(-1);
-        }
-    }
+	clickRemove(): void {
+		if (this.quantity > 0) {
+			this.quantity--;
+			this.quantityChange.emit(-1);
+		}
+	}
 
 	clickAdd(): void {
 		if (this.quantity < this.max) {

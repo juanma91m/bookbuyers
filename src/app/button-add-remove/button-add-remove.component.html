@@ -1,16 +1,16 @@
 <div class="container">
-    @if (max > 0) {
-        <button 
-            [ngClass]='{noVisible: quantity == 0}'
-            type="button"
-            class="btn btn-danger border-radius-left"
-            (click)="clickRemove()"
-        >
-            -
-        </button>
-        <span class="quantity">{{quantity}}</span>
-        <button [ngClass]='{noVisible: max <= quantity}' type="button" class="btn btn-success border-radius-right" (click)="clickAdd()">
-            +
-        </button>
-    }
+	@if (max > 0) {
+		<button 
+			[ngClass]='{noVisible: quantity == 0}'
+			type="button"
+			class="btn btn-danger border-radius-left"
+			(click)="clickRemove()"
+		>
+			-
+		</button>
+		<span class="quantity">{{quantity}}</span>
+		<button [ngClass]='{noVisible: max <= quantity}' type="button" class="btn btn-success border-radius-right" (click)="clickAdd()">
+			+
+		</button>
+	}
 </div>

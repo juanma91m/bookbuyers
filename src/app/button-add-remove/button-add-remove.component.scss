@@ -1,39 +1,39 @@
 .container {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 [type="button"] {
-    height: 30px;
-    width: 30px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	height: 30px;
+	width: 30px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .border-radius-left {
-    border-radius: 10px 0px 0px 10px;
+	border-radius: 10px 0px 0px 10px;
 }
 
 .border-radius-right {
-    border-radius: 0px 10px 10px 0px;
+	border-radius: 0px 10px 10px 0px;
 }
 
 .quantity {
-    //  border: 2px solid #11bfd6;
-    background-color: #c2fafc;
-    color: gray;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    font-weight: bold;
-    font-size: 15px;
+	// border: 2px solid #11bfd6;
+	background-color: #c2fafc;
+	color: gray;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	height: 30px;
+	width: 30px;
+	font-weight: bold;
+	font-size: 15px;
 }
 
 .noVisible {
-    visibility: hidden;
+	visibility: hidden;
 }

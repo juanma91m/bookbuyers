@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../assets/interfaces/Book';
 import { Cart } from '../../assets/classes/Cart';
+import { BookCartService } from '../book-cart.service';
 
 @Component({
 	selector: 'app-book-list',
@@ -23,7 +24,7 @@ export class BookListComponent {
 			titulo: "El Principito",
 			autor: "Antoine de Saint-Exupéry",
 			precio: 720,
-			porcentajeDescuento: 10,
+			porcentajeDescuento: 0.1,
 			stock: 132,
 			imagen: "assets/img/principito.jpg",
 		},
@@ -47,11 +48,16 @@ export class BookListComponent {
 		},
 	];
 
-	cart: Cart = new Cart(
-		1
-	);
+	cartService: BookCartService;
+
+	constructor(cartService: BookCartService) {
+		this.cartService = cartService;
+	}
 
 	updateQuantity(quantity: number, book: Book): void {
-		this.cart.updateCantidad(book, quantity);
+		if (quantity > 0)
+			this.cartService.addElementToCart(book);
+		else if (quantity < 0)
+			this.cartService	.removeElementToCart(book);
 	}
 }

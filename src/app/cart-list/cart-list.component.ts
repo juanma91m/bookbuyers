@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { BookCartService } from '../book-cart.service';
 
 @Component({
-	selector: 'app-book-cart',
-	templateUrl: './book-cart.component.html',
-	styleUrl: './book-cart.component.scss'
+	selector: 'app-cart-list',
+	templateUrl: './cart-list.component.html',
+	styleUrl: './cart-list.component.scss'
 })
-export class BookCartComponent {
+export class CartListComponent {
 	cartService: BookCartService;
 
 	constructor(cartService: BookCartService) {

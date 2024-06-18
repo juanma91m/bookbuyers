@@ -1,15 +1,15 @@
 :host(app-book-publicidad) {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 100%;
-    width:100%;
-    padding: 3% 0px 6% 0px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	height: 100%;
+	width:100%;
+	padding: 3% 0px 6% 0px;
 }
 
 .publicidad {
-    max-width: 60%;
-    max-height: 80%;
+	max-width: 60%;
+	max-height: 80%;
 }

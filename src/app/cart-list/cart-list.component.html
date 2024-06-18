@@ -1,0 +1,35 @@
+<table class="table table-dark table-striped text-center">
+	<thead>
+		<tr>
+			<th scope="col">Título</th>
+			<th scope="col">Precio Unitario</th>
+			<th scope="col">% Descuento</th>
+			<th scope="col">Cantidad</th>
+			<th scope="col">Precio Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (lineCartItem of cartService.cart.linesCart; track lineCartItem.book.id) {
+			<tr>
+				<td>{{lineCartItem.book.titulo}}</td>
+				<td>{{lineCartItem.book.precio | currency}}</td>
+				<td>{{lineCartItem.book.porcentajeDescuento | percent}}</td>
+				<td>{{lineCartItem.cantidad}}</td>
+				<td>{{lineCartItem.getTotalPrice() | currency}}</td>
+			</tr>
+		} @empty {
+			<tr>
+				<td colspan="6">El carrito está vacío</td>
+			</tr>
+		}
+		@if (cartService.cart.linesCart.length > 0) {
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>Total</td>
+				<td>{{cartService.cart.getTotalPrice() | currency}}</td>
+			</tr>
+		}
+	</tbody>
+</table>

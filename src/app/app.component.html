@@ -6,16 +6,17 @@
 	</label>
 	<ul class="navegacion">
 		<a [routerLink]="['/home']">
-			<li class="menu">Inicio</li>
+			<li class="menu"><i class="fas fa-home"></i><span class="textMenu">&nbsp;&nbsp;Inicio</span></li>
 		</a>
 		<a [routerLink]="['/books']">
-			<li class="menu">Libros</li>
+			<li class="menu"><i class="fas fa-book"></i><span class="textMenu">&nbsp;&nbsp;Libros</span></li>
 		</a>
 		<a [routerLink]="['/cart']">
-			<li class="menu">Carrito</li>
+			<li class="menu">
+				<i class="fas fa-shopping-cart"> </i><span class="textMenu">&nbsp;&nbsp;Carrito</span></li>
 		</a>
 		<a [routerLink]="['/contact']">
-			<li class="menu">Contactate</li>
+			<li class="menu"><i class="fas fa-mobile-alt"></i><span class="textMenu">&nbsp;&nbsp;Contactate</span></li>
 		</a>
 	</ul>
 </nav>

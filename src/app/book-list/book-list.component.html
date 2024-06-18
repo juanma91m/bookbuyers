@@ -1,41 +1,41 @@
 <table class="table table-dark table-striped text-center">
-    <thead>
-        <tr>
-            <th scope="col">Título</th>
-            <th scope="col">Autor</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Imagen</th>
+	<thead>
+		<tr>
+			<th scope="col">Título</th>
+			<th scope="col">Autor</th>
+			<th scope="col">Precio</th>
+			<th scope="col">Stock</th>
+			<th scope="col">Imagen</th>
 			<th scope="col">Agregar / Quitar</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (book of books; track book.id) {
-            <tr [ngClass]='{discount: book.porcentajeDescuento > 0}'>
-                <td>{{book.titulo}}</td>
-                <td>{{book.autor}}</td>
-                <td>{{((100-book.porcentajeDescuento) * book.precio / 100) | currency}}</td>
-                <td>
-                    @if (book.stock > 0) {
-                        <span class="badge text-bg-success">Hay stock</span>
-                    } @else {
-                        <span class="badge text-bg-warning">Sin stock</span>
-                    }
-                </td>
-                <td><img class="imagen-col" [src]="book.imagen" [alt]="book.titulo" /></td>
+		</tr>
+	</thead>
+	<tbody>
+		@for (book of books; track book.id) {
+			<tr [ngClass]='{discount: book.porcentajeDescuento > 0}'>
+				<td>{{book.titulo}}</td>
+				<td>{{book.autor}}</td>
+				<td>{{((1-book.porcentajeDescuento) * book.precio) | currency}}</td>
 				<td>
-                    <app-button-add-remove 
-                    [quantity]="cart.getCantidad(book.id)"
-                    [max]="book.stock"
-                    (quantityChange)="updateQuantity($event, book)"
-                    >
-                    </app-button-add-remove>
-                </td>
-            </tr>
-        } @empty {
+					@if (book.stock > 0) {
+						<span class="badge text-bg-success">Hay stock</span>
+					} @else {
+						<span class="badge text-bg-warning">Sin stock</span>
+					}
+				</td>
+				<td><img class="imagen-col" [src]="book.imagen" [alt]="book.titulo" /></td>
+				<td>
+					<app-button-add-remove 
+					[quantity]="cartService.cart.getCantidad(book.id)"
+					[max]="book.stock"
+					(quantityChange)="updateQuantity($event, book)"
+					>
+					</app-button-add-remove>
+				</td>
+			</tr>
+		} @empty {
 			<tr>
 				<td colspan="6">No hay libros para mostrar</td>
 			</tr>
 		}
-    </tbody>
+	</tbody>
 </table>

@@ -11,24 +11,26 @@ import { BookCartComponent } from './book-cart/book-cart.component';
 import { BookbuyersBooksComponent } from './bookbuyers-books/bookbuyers-books.component';
 import { BookbuyersHomeComponent } from './bookbuyers-home/bookbuyers-home.component';
 import { BookbuyersCartComponent } from './bookbuyers-cart/bookbuyers-cart.component';
+import { CartListComponent } from './cart-list/cart-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookListComponent,
-    BookPublicidadComponent,
-    ButtonAddRemoveComponent,
-    BookbuyersContactComponent,
-    BookCartComponent,
-    BookbuyersBooksComponent,
-    BookbuyersHomeComponent,
-    BookbuyersCartComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		BookListComponent,
+		BookPublicidadComponent,
+		ButtonAddRemoveComponent,
+		BookbuyersContactComponent,
+		BookCartComponent,
+		BookbuyersBooksComponent,
+		BookbuyersHomeComponent,
+		BookbuyersCartComponent,
+		CartListComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
