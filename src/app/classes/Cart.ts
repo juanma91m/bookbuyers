@@ -1,11 +1,15 @@
 import { BehaviorSubject } from 'rxjs';
 import { Book } from '../interfaces/Book';
 import { BookCart } from './LineCartItem';
+import { BookDataService } from '../book-data.service';
+import { Inject } from '@angular/core';
 
 export class Cart {
 	id: number;
 	private _linesCart: BookCart[];
-	linesCart: BehaviorSubject<BookCart[]>; 
+	linesCart: BehaviorSubject<BookCart[]>;
+	@Inject(BookDataService)
+	bookDataService!: BookDataService;
 
 	constructor(
 		id: number,
@@ -27,9 +31,10 @@ export class Cart {
 		let index = this.findIndexBookById(book.id);
 
 		if (index == -1) {
-			this._linesCart.push(new BookCart(book, 0));
+			this._linesCart.push(new BookCart(book, 1));
+		} else {
+			this._linesCart[index].updateCantidad(1);
 		}
-		this._linesCart[index].updateCantidad(1);
 		this.linesCart.next(this._linesCart);
 	}
 
@@ -37,8 +42,9 @@ export class Cart {
 		let index = this.findIndexBookById(book.id);
 		if (index != -1 && this._linesCart[index].cantidad == 1) {
 			this._linesCart.splice(index, 0);
-		} 
-		this._linesCart[index].updateCantidad(-1);
+		} else {
+			this._linesCart[index].updateCantidad(-1);
+		}
 		this.linesCart.next(this._linesCart);
 	}
 

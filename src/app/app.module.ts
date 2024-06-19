@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { BookbuyersBooksComponent } from './bookbuyers-books/bookbuyers-books.co
 import { BookbuyersHomeComponent } from './bookbuyers-home/bookbuyers-home.component';
 import { BookbuyersCartComponent } from './bookbuyers-cart/bookbuyers-cart.component';
 import { CartListComponent } from './cart-list/cart-list.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -28,9 +29,11 @@ import { CartListComponent } from './cart-list/cart-list.component';
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
 	],
-	providers: [],
+	providers: [
+		provideHttpClient()
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

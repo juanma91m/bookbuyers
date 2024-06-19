@@ -10,7 +10,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		@for (book of bookStockService.books; track book.id) {
+		@for (book of books | async; track book.id) {
 			<tr [ngClass]='{discount: book.porcentajeDescuento > 0}'>
 				<td>{{book.titulo}}</td>
 				<td>{{book.autor}}</td>
